@@ -1,0 +1,232 @@
+/* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #87CEEB, #90EE90); /* Light Blue to Light Green */
+    height: 100vh; /* Ensure full viewport height */
+    overflow: hidden; /* Hide scrollbars */
+}
+
+/* Game Wrapper */
+#game-wrapper {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+/* Conteneur englobant le jeu et les contrôles */
+#game-area {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    max-width: 800px;
+}
+
+/* Game Container : zone du jeu */
+#game-container {
+    width: 100%;
+    /* On garde un ratio de 4:3 */
+    aspect-ratio: 4 / 3;
+    background-color: white;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Score, Level, High Score, Timer and Missed Display */
+#score, #level, #high-score, #timer, #missed {
+    position: absolute;
+    color: black;
+    font-size: 1.5rem;
+    z-index: 3;
+}
+
+#score {
+    top: 2%;
+    left: 2%;
+}
+
+#level {
+    top: 8%;
+    left: 2%;
+}
+
+#high-score {
+    top: 2%;
+    right: 2%;
+}
+
+#timer {
+    top: 14%;
+    left: 2%;
+}
+
+/* Missed counter placed under the timer */
+#missed {
+    top: 20%;
+    left: 2%;
+}
+
+/* Start Button */
+#start-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0.5em 1em;
+    font-size: 1.5rem;
+    color: white;
+    background-color: #32CD32;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 6;
+}
+
+/* Controls : Boutons "Pause" et "Exit" positionnés juste au-dessus du coin supérieur droit de #game-container */
+#controls {
+    position: absolute;
+    top: -50px; /* Ajustez selon vos besoins */
+    right: 0;
+    z-index: 10;
+    display: none;
+}
+
+#controls button {
+    margin: 5px;
+    padding: 0.5em 1em;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Loading Bar */
+#loading-bar-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 10px;
+    background-color: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    z-index: 7;
+    display: none;
+}
+
+#loading-bar {
+    width: 0;
+    height: 100%;
+    background-color: #32CD32;
+    border-radius: 5px;
+}
+
+/* Balloon Styling */
+.balloon {
+    position: absolute;
+    width: 50px;
+    height: 60px;
+    background-color: red;
+    border-radius: 50%;
+    cursor: pointer;
+    animation: float 5s linear forwards;
+    z-index: 4;
+}
+
+.heart-balloon {
+    background-color: pink;
+    animation: float 1.67s linear forwards, blink 0.5s infinite;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+/* Sparkle Effect */
+.sparkle {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: white;
+    border-radius: 50%;
+    animation: sparkle 1s ease-out forwards;
+}
+
+/* Game Over / Level Up / Win Container */
+#game-over-container {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 20;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Boutons de l'écran Game Over / Level Up / Win */
+#game-over-container button {
+    margin: 5px;
+    padding: 0.5em 1em;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Animations */
+@keyframes float {
+    0% { top: 100%; opacity: 0; transform: scale(0.5); }
+    20% { opacity: 1; transform: scale(1); }
+    100% { top: -10%; transform: scale(1); }
+}
+
+@keyframes sparkle {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(2);
+    }
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Media Queries for Mobile */
+@media (max-width: 800px) {
+    /* Le conteneur #game-area s'ajuste à la largeur de l'écran */
+    #game-area {
+        width: 95%;
+    }
+    /* Les éléments de texte s'adaptent en taille */
+    #score, #level, #high-score, #timer, #missed {
+        font-size: 1.2rem;
+    }
+    /* Ajustement de la taille des ballons en unités relatives */
+    .balloon {
+        width: 12vw;
+        height: 15vw;
+    }
+    /* Boutons et contrôles */
+    #start-button {
+        font-size: 1.2rem;
+        padding: 0.5em 1em;
+    }
+    #controls button {
+        font-size: 0.9rem;
+        padding: 0.4em 0.8em;
+    }
+}
