@@ -1,4 +1,5 @@
-document.addEventListener('DOMContentLoaded', function() {
+//<![CDATA[
+    document.addEventListener('DOMContentLoaded', function() {
     const startButton = document.getElementById('start-button');
     const loadingBarContainer = document.getElementById('loading-bar-container');
     const loadingBar = document.getElementById('loading-bar');
@@ -372,3 +373,4 @@ document.addEventListener('DOMContentLoaded', function() {
     restartButton.addEventListener('click', resetGame);
     updateHighScore();
 });
+//]]>
