@@ -801,7 +801,7 @@
     grid-template-columns: 1fr;
   }
   
-  .game-title {
+  .game-article .game-title {
     font-size: 2rem;
   }
   
@@ -812,7 +812,7 @@
 }
 
 @media (max-width: 768px) {
-  .game-title {
+ .game-article .game-title {
     font-size: 1.75rem;
   }
   
@@ -830,19 +830,19 @@
     padding: 12px 30px;
   }
   
-  .worlds-grid,
-  .mechanics-grid,
-  .art-grid {
+.game-article  .worlds-grid,
+.game-article  .mechanics-grid,
+.game-article  .art-grid {
     grid-template-columns: 1fr;
   }
   
-  .game-actions {
+ .game-article .game-actions {
     flex-direction: column;
     gap: 1rem;
   }
   
-  .section-title::after,
-  .game-title::after {
+  .game-article .section-title::after,
+  .game-article .game-title::after {
     width: 60px;
   }
 }
