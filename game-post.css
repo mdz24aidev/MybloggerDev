@@ -19,11 +19,11 @@
 }
 
 /* ==== EN-TÊTE DU JEU ==== */
-.game-header {
+.game-article .game-header {
   margin-bottom: 2rem;
 }
 
-.game-banner {
+.game-article .game-banner {
   position: relative;
   width: 100%;
   border-radius: 16px;
@@ -32,18 +32,18 @@
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-.game-banner-img {
+.game-article .game-banner-img {
   width: 100%;
   height: auto;
   display: block;
   transition: transform 1.2s ease;
 }
 
-.game-banner:hover .game-banner-img {
+.game-article .game-banner:hover .game-article .game-banner-img {
   transform: scale(1.03);
 }
 
-.game-title {
+.game-article .game-title {
   font-size: 2.5rem;
   font-weight: 800;
   color: var(--primary-color);
@@ -54,7 +54,7 @@
   padding-bottom: 0.5rem;
 }
 
-.game-title::after {
+.game-article .game-title::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -66,7 +66,7 @@
   border-radius: 2px;
 }
 
-.game-actions {
+.game-article .game-actions {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -74,7 +74,7 @@
   margin: 2rem 0;
 }
 
-.play-button {
+.game-article .play-button {
   display: inline-block;
   background-color: var(--primary-color);
   color: white !important;
@@ -230,7 +230,7 @@
 }
 
 /* ==== CARACTÉRISTIQUES DU JEU ==== */
-.section-title {
+.game-article .section-title {
   font-size: 2rem;
   color: var(--primary-color);
   text-align: center;
@@ -239,7 +239,7 @@
   padding-bottom: 0.8rem;
 }
 
-.section-title::after {
+.game-article .section-title::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -251,7 +251,7 @@
   border-radius: 4px;
 }
 
-.feature-item {
+.game-article .feature-item {
   display: grid;
   grid-template-columns: 1fr 1.5fr;
   gap: 2rem;
@@ -259,17 +259,17 @@
   align-items: center;
 }
 
-.feature-item.reverse {
+.game-article .feature-item.reverse {
   grid-template-columns: 1.5fr 1fr;
 }
 
-.feature-image {
+.game-article .feature-image {
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-.feature-image img {
+.game-article .feature-image img {
   width: 100%;
   height: auto;
   display: block;
@@ -769,12 +769,12 @@
   transform: scale(1.08);
 }
 
-.related-info {
+.game-article .related-info {
   padding: 1rem;
   text-align: center;
 }
 
-.related-info h3 {
+.game-article .related-info h3 {
   font-size: 1rem;
   margin: 0;
   color: var(--text-dark);
@@ -782,22 +782,22 @@
 
 /* ==== ADAPTATIONS RESPONSIVES ==== */
 @media (max-width: 992px) {
-  .game-intro,
-  .feature-item,
-  .feature-item.reverse,
-  .coop-container {
+.game-article  .game-intro,
+.game-article  .feature-item,
+.game-article  .feature-item.reverse,
+.game-article  .coop-container {
     grid-template-columns: 1fr;
   }
   
-  .worlds-grid,
-  .mechanics-grid,
-  .art-grid {
+.game-article  .worlds-grid,
+.game-article  .mechanics-grid,
+.game-article  .art-grid {
     grid-template-columns: repeat(2, 1fr);
   }
   
-  .testimonials,
-  .related-grid,
-  .challenges-container {
+ .game-article .testimonials,
+ .game-article .related-grid,
+ .game-article .challenges-container {
     grid-template-columns: 1fr;
   }
   
@@ -805,7 +805,7 @@
     font-size: 2rem;
   }
   
-  .section-title,
+ .game-article .section-title,
   .cta-section h2 {
     font-size: 1.75rem;
   }
@@ -848,20 +848,20 @@
 }
 
 @media (max-width: 480px) {
-  .game-banner {
+ .game-article .game-banner {
     border-radius: 8px;
   }
   
-  .game-title {
+ .game-article .game-title {
     font-size: 1.5rem;
   }
   
-  .section-title {
+ .game-article .section-title {
     font-size: 1.5rem;
   }
   
-  .mechanic-icon,
-  .challenge-icon {
+  .game-article .mechanic-icon,
+ .game-article .challenge-icon {
     width: 50px;
     height: 50px;
   }
@@ -943,17 +943,17 @@
 }
 
 /* Effet visuel pour les transitions entre sections */
-.section-title, 
-.game-features, 
-.game-worlds, 
-.game-mechanics, 
-.progression-system, 
-.multiplayer, 
-.artistic-direction, 
-.daily-challenges, 
-.cta-section, 
-.game-comments, 
-.related-games {
+.game-article .section-title, 
+.game-article .game-features, 
+.game-article .game-worlds, 
+.game-article .game-mechanics, 
+.game-article .progression-system, 
+.game-article .multiplayer, 
+.game-article .artistic-direction, 
+.game-article .daily-challenges, 
+.game-article .cta-section, 
+.game-article .game-comments, 
+.game-article .related-games {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.8s ease, transform 0.8s ease;
